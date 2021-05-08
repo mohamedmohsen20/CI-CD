@@ -1,0 +1,6 @@
+this is CI/CD project
+
+1-create local repo
+2-connect local repo
+3-create repo on Docker hub
+4-setting jenkines (webhook - push to Docker hub)
