@@ -11,5 +11,10 @@ pipeline {
                 sh "docker build -t cicd:${BUILD_NUMBER} ."
             }
         }
+        stage("deployment") {
+            steps {
+                sh "docker run -d -p 1000:80 cicd:${BUILD_NUMBER} "
+            }
+        }
     }
 }
