@@ -7,7 +7,9 @@ pipeline {
             }
         }
         stage('docker build image') {
-            sh "docker build -t cicd:${BUILD_NUMBER} ."
+            steps {
+                sh "docker build -t cicd:${BUILD_NUMBER} ."
+            }
         }
     }
 }
