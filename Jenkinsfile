@@ -11,7 +11,7 @@ pipeline {
                 message "ENTER TAG"
                 ok "yes"
                 parameters {
-                    string(name: 'TAG', description= 'enter TAG num')
+                    string(name: 'TAG', description: 'enter TAG num')
                 }
             }
             steps {
