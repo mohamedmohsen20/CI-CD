@@ -2,6 +2,9 @@ pipeline {
     agent any
     stages {
         stage("git checkout") {
+            when {
+                branch 'master'
+            }
             steps {
                 git 'https://github.com/mohamedmohsen20/CI-CD.git'
             }
