@@ -7,13 +7,20 @@ pipeline {
             }
         }
         stage('docker build image') {
+            input {
+                message "ENTER TAG"
+                ok "yes"
+                parameters {
+                    string(name: 'TAG', description="enter TAG num")
+                }
+            }
             steps {
-                sh "docker build -t cicd:${BUILD_NUMBER} ."
+                sh "docker build -t cicd:${params.TAG} ."
             }
         }
         stage("deployment") {
             steps {
-                sh "docker run -d -p 1000:80 cicd:${BUILD_NUMBER} "
+                sh "docker run -d -p 1000:80 cicd:${BUILD} "
             }
         }
     }
