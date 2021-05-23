@@ -20,7 +20,7 @@ pipeline {
         }
         stage("deployment") {
             steps {
-                sh "docker run -d -p 1000:80 cicd:${BUILD} "
+                sh "docker run -d -p 1000:80 cicd:${params.TAG} "
             }
         }
     }
